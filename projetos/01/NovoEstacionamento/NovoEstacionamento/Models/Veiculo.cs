@@ -6,6 +6,10 @@
         public int ClienteId { get; set; }
         public string Placa { get; set; }
         public string Modelo { get; set; }
-        public string Cor { get; set; }
+        public string Cores { get; set; }
+
+
+        //Propriedade de navegação
+        public Cliente Cliente { get; set; }
     }
 }
