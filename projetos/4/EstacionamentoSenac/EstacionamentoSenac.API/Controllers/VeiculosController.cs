@@ -1,7 +1,7 @@
 ﻿using EstacionamentoSenac.API.Data;
 using EstacionamentoSenac.API.Models;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc; 
 
 namespace EstacionamentoSenac.API.Controllers
 {
