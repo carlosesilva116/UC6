@@ -4,7 +4,7 @@
 
 <h3>Lista de Motoristas</h3>
 
-<a href="#" class="btn btn-info">Cadastrar</a>
+<a href="/veiculos/create" class="btn btn-info">Cadastrar</a>
 
 @if (motoristas == null)
 {
@@ -34,7 +34,7 @@ else
                     <td>@motorista.VeiculoId</td>
                     <td>
                         <a href="#" class="btn btn-warning">Editar</a>
-                        <a href="#" class="btn btn-info">Detalhes</a>
+                        <a href="/motoristas/Details/@motorista.Id" class="btn btn-info">Detalhes</a>
                         <a href="#" class="btn btn-danger">Excluir</a>
                     </td>
                 </tr>
