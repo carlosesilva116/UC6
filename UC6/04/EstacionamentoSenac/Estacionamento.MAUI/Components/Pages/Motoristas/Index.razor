@@ -4,9 +4,9 @@
 
 <h3>Lista de Motoristas</h3>
 
-<a href="/veiculos/create" class="btn btn-info">Cadastrar</a>
+<a href="#" class="btn btn-info">Cadastrar</a>
 
-@if (motoristas == null)
+@if(motoristas == null)
 {
     <h1>NÃO TEM MOTORISTAS AINDA!!!</h1>
 }
@@ -20,8 +20,8 @@ else
         <thead>
             <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Marca</th>
-                <th scope="col">Modelo</th>
+                <th scope="col">Nome</th>
+                <th scope="col">ID do Veículo</th>
                 <th scope="col">Ações</th>
             </tr>
         </thead>
@@ -34,8 +34,8 @@ else
                     <td>@motorista.VeiculoId</td>
                     <td>
                         <a href="#" class="btn btn-warning">Editar</a>
-                        <a href="/motoristas/Details/@motorista.Id" class="btn btn-info">Detalhes</a>
-                        <a href="#" class="btn btn-danger">Excluir</a>
+                        <a href="/motoristas/details/@motorista.Id" class="btn btn-info">Detalhes</a>
+                        <a href="/motoristas/delete/@motorista.Id" class="btn btn-danger">Excluir</a>
                     </td>
                 </tr>
             }

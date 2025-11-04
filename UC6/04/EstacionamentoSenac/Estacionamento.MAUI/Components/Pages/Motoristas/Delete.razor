@@ -1,58 +1,57 @@
-﻿@page "/veiculos/delete/{id:int}"
+﻿@page "/motoristas/delete/{id:int}"
 @using Estacionamento.MAUI.Models
 @inject HttpClient Http
 @inject NavigationManager NavigationManager;
 
-<h3>Delete</h3>
+<h3>Excluir Motorista</h3>
 
-
-@if (veiculo == null)
+@if (motorista == null)
 {
     <p><em>Carregando...</em></p>
 }
 else
 {
     <div>
-        <h4>Veículo</h4>
+        <h4>Motorista</h4>
         <hr />
 
         <dl class="row">
             <dt class="col-sm-2">
-                Marca
+                Nome
             </dt>
             <dd class="col-sm-10">
-                @veiculo.Marca
+                @motorista.Nome
             </dd>
             <dt class="col-sm-2">
-                Modelo
+                VeiculoId
             </dt>
             <dd class="col-sm-10">
-                @veiculo.Modelo
+                @motorista.VeiculoId
             </dd>
         </dl>
 
-        <form @onsubmit="DeleteVeiculo">
+        <form @onsubmit="DeleteMotorista">
             <input type="submit" value="Excluir" class="btn btn-danger" />
-            <a href="/veiculos" class="bnt btn-light">Voltar</a>
-            
+            <a href="/motoristas" class="btn btn-light">Voltar</a>
         </form>
     </div>
 }
+
+
 
 @code {
     [Parameter]
     public int Id { get; set; }
 
-    private Veiculo? veiculo;
+    private Motorista? motorista;
 
     protected override async Task OnInitializedAsync()
     {
-        veiculo = await Http.GetFromJsonAsync<Veiculo>($"https://localhost:4000/api/Veiculos/{Id}");
+        motorista = await Http.GetFromJsonAsync<Motorista>($"https://localhost:4000/api/Motoristas/{Id}");
     }
-
-    async Task DeleteVeiculo()
+    async Task DeleteMotorista()
     {
-        await Http.DeleteAsync($"https://localhost:4000/api/Veiculos/{Id}");
-        NavigationManager.NavigateTo("/veiculos");
+        await Http.DeleteAsync($"https://localhost:4000/api/Motoristas/{Id}");
+        NavigationManager.NavigateTo("/motoristas");
     }
 }
