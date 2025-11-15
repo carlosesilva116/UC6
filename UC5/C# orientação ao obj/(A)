@@ -1,0 +1,139 @@
+﻿//Crie um programa em C# que pergunte:
+//Nome do aluno
+//Nota 1
+//Nota 2
+//O sistema deve calcular a média e informar:
+//A média final
+//Se o aluno foi aprovado, está de recuperação ou reprovado
+//Conceito (A até F) com base na média
+//Exemplo de classificação:
+//A: 9 a 10
+//B: 8 a 8.9
+//C: 7 a 7.9
+//D: 5 a 6.9
+//F: abaixo de 5
+
+
+
+
+
+Console.WriteLine("Digite o seu nome");
+string nome = Console.ReadLine();
+
+
+
+Console.WriteLine("Digite a primeira nota");
+double nota1 = Convert.ToDouble(Console.ReadLine());
+
+
+
+Console.WriteLine("Digite a segunda nota");
+double nota2 = Convert.ToDouble(Console.ReadLine());
+
+
+
+double media = (nota1 + nota2) / 2;
+
+
+
+
+
+if (media >= 7)
+{
+    Console.WriteLine("Aprovado");
+}
+else if (media >= 5)
+{
+    Console.WriteLine("Recuperação");
+}
+else
+    Console.WriteLine("Reprovado");
+
+
+
+Console.WriteLine($"Aluno: {nome}. Sua média é : {media} ");
+
+
+
+int convertido = (int)Math.Floor(media);
+
+
+
+switch (convertido)
+{
+
+
+
+    case 10:
+
+
+
+        Console.WriteLine("Classificação de média: A");
+        break;
+
+    case 9:
+
+
+
+        Console.WriteLine("Classificação de média: A");
+        break;
+
+
+
+    case 8:
+        Console.WriteLine("Classificação de média: B");
+        break;
+
+
+
+    case 7:
+        Console.WriteLine("Classificação de média: C");
+        break;
+
+
+
+    case 6:
+        Console.WriteLine("Classificação de média: D");
+        break;
+
+
+
+    case 5:
+        Console.WriteLine("Classificação de média: D");
+        break;
+
+
+
+    case 4:
+        Console.WriteLine("Classificação de média: F");
+        break;
+
+
+
+    case 3:
+        Console.WriteLine("Classificação de média: F");
+        break;
+
+
+
+    case 2:
+        Console.WriteLine("Classificação de média: F");
+        break;
+
+
+
+    case 1:
+        Console.WriteLine("Classificação de média: F");
+        break;
+
+
+
+    case 0:
+        Console.WriteLine("Classificação de média: F");
+        break;
+
+
+
+
+
+}
